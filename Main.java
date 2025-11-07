@@ -8,37 +8,51 @@ public class Main {
         System.out.println("Enter your ranking points: ");
         rakingPoints = header.nextInt();
         String rank = "";
-        if(rakingPoints <= 1000) {
-            rank = "Iron";
-            System.out.println(rank);
-        } else if(rakingPoints > 1000 && rakingPoints <= 2000) {
-            rank = "Bronze";
-            System.out.println(rank);
-        } else if(rakingPoints > 2000 && rakingPoints <= 5000) {
-            rank = "Silver";
-            System.out.println(rank);
-        } else if(rakingPoints > 5000 && rakingPoints <= 6000) {
-            rank = "Gold";
-            System.out.println(rank);
-        } else if(rakingPoints > 6000 && rakingPoints <= 7000) {
-            rank = "Platinum";
-            System.out.println(rank);
-        } else if(rakingPoints > 7000 && rakingPoints <= 8000) {
-            rank = "Diamond";
-            System.out.println(rank);
-        } else if(rakingPoints > 8000 && rakingPoints <= 9000) {
-            rank = "Ascendant";
-            System.out.println(rank);
-        } else if(rakingPoints > 9000 && rakingPoints <= 10000) {
-            rank = "Immortal";
-            System.out.println(rank);
-        } else if(rakingPoints > 10000) {
-            rank = "Radiant";
-            System.out.println(rank);
-        } else {
-            rank = "Invalid";
-            System.out.println(rank);
+        
+        int tier;
+        if (rakingPoints <= 1000) tier = 1;
+        else if (rakingPoints <= 2000) tier = 2;
+        else if (rakingPoints <= 5000) tier = 3;
+        else if (rakingPoints <= 6000) tier = 4;
+        else if (rakingPoints <= 7000) tier = 5;
+        else if (rakingPoints <= 8000) tier = 6;
+        else if (rakingPoints <= 9000) tier = 7;
+        else if (rakingPoints <= 10000) tier = 8;
+        else if (rakingPoints > 10000) tier = 9;
+        else tier = 0;
+
+        switch (tier) {
+            case 1:
+                rank = "Iron";
+                break;
+            case 2:
+                rank = "Bronze";
+                break;
+            case 3:
+                rank = "Silver";
+                break;
+            case 4:
+                rank = "Gold";
+                break;
+            case 5:
+                rank = "Platinum";
+                break;
+            case 6:
+                rank = "Diamond";
+                break;
+            case 7:
+                rank = "Ascendant";
+                break;
+            case 8:
+                rank = "Immortal";
+                break;
+            case 9:
+                rank = "Radiant";
+                break;
+            default:
+                rank = "Invalid";
         }
+        System.out.println(rank);
         System.out.println(valorantNick + ", your rank is:" + rank);
         
         header.close();
